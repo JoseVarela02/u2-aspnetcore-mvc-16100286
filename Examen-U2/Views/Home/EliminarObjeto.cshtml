@@ -1,0 +1,6 @@
+﻿@model Productos
+
+<h3>Desea Eliminar este producto @Model.NombreProducto?</h3>
+
+<a asp-action="ListaObjetos">No</a>
+<td>@Html.ActionLink("Eliminar", "ConfirmarEliminar", new { codprodu =  Model.CodigoProducto })</td>

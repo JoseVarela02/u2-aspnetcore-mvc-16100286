@@ -56,6 +56,38 @@ namespace Examen_U2.Controllers
             }
         }
 
+        public IActionResult EditarObjeto(int codprodu)
+        {
+            Productos productos = Datos.Objetos.Where(e => e.CodigoProducto == codprodu).FirstOrDefault();
+
+            return View(productos);
+
+        }
+        [HttpPost]
+        public IActionResult EditarObjeto(Productos produc)
+        {
+            Productos productos = Datos.Objetos.Where(e => e.CodigoProducto == produc.CodigoProducto).FirstOrDefault();
+
+            productos.NombreProducto = produc.NombreProducto;
+            productos.ProductosEnExistencia = produc.ProductosEnExistencia;
+            productos.Precio = produc.Precio;
+
+
+            return RedirectToAction("ListaObjetos");
+
+        }
+
+        public IActionResult ConfirmarEliminar(int Producto)
+        {
+            return RedirectToAction("ListaObjetos");
+        }
+
+        public IActionResult EliminarObjeto(int codproduc)
+        {
+            Productos productos = Datos.Objetos.Where(e => e.CodigoProducto ==  codproduc).FirstOrDefault();
+
+            return View(productos);
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

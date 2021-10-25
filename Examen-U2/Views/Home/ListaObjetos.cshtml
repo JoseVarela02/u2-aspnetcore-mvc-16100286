@@ -12,12 +12,15 @@
     </tr>
     @foreach (Productos prod in Model)
             {
-                <tr>
-                    <td>@prod.CodigoProducto</td>
-                    <td>@prod.NombreProducto</td>
-                    <td>@prod.ProductosEnExistencia</td>
-                    <td>@prod.Precio</td>
-                </tr>
+<tr>
+    <td>@prod.CodigoProducto</td>
+    <td>@prod.NombreProducto</td>
+    <td>@prod.ProductosEnExistencia</td>
+    <td>@prod.Precio</td>
+    <td>@Html.ActionLink("Editar", "EditarObjeto", new { codprodu = prod.CodigoProducto })</td>
+    <td>@Html.ActionLink("Eliminar", "EliminarObjeto", new { codprodu = prod.CodigoProducto })</td>
+
+</tr>
             }
 
 </table>

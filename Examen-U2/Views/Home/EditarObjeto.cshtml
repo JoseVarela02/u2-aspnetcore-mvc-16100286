@@ -1,0 +1,28 @@
+﻿@model Productos
+
+<div asp-validation-summary="All"></div>
+<form asp-action="EditarObjeto" method="post">
+
+    <div>
+        <label>Numero Producto:</label>
+        <input asp-for="CodigoProducto"  readonly/>
+    </div>
+
+    <div>
+        <label>Nombre Producto:</label>
+        <input asp-for="NombreProducto" />
+    </div>
+
+    <div>
+        <label>Prodcutos en existencia:</label>
+        <input asp-for="ProductosEnExistencia" />
+    </div>
+
+    <div>
+        <label>Precio:</label>
+        <input asp-for="Precio" />
+    </div>
+    <br />
+    <button class="btn btn-primary" type="submit">Guardar</button>
+
+</form>
