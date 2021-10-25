@@ -30,7 +30,7 @@ namespace Examen_U2.Controllers
 
 
 
-        public IActionResult RegistrarProducto()
+        public IActionResult AgregarObjeto()
         {
             return View();
         }
@@ -42,7 +42,7 @@ namespace Examen_U2.Controllers
 
         [HttpPost]
 
-        public IActionResult RegistrarObjeto(Productos pro)
+        public IActionResult AgregarObjeto(Productos pro)
 
         {
             if(ModelState.IsValid)
@@ -52,7 +52,7 @@ namespace Examen_U2.Controllers
             }
             else
             {
-                return View("RegistrarProducto");
+                return View("AgregarObjeto");
             }
         }
 
