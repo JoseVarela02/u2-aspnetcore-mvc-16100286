@@ -17,5 +17,9 @@ namespace Examen_U2.Models
             objetos.Add(objeto);
         }
         
+        public static void EliminarProducto(Productos objeto)
+        {
+            objetos.Remove(objeto);
+        }
     }
 }

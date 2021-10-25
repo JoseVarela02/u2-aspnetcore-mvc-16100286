@@ -77,14 +77,17 @@ namespace Examen_U2.Controllers
 
         }
 
-        public IActionResult ConfirmarEliminar(int Producto)
+        public IActionResult ConfirmarEliminar(int codprodu)
         {
+            Productos productos = Datos.Objetos.Where(e => e.CodigoProducto == codprodu).FirstOrDefault();
+            Datos.EliminarProducto(productos);
+
             return RedirectToAction("ListaObjetos");
         }
 
-        public IActionResult EliminarObjeto(int codproduc)
+        public IActionResult EliminarObjeto(int codprodu)
         {
-            Productos productos = Datos.Objetos.Where(e => e.CodigoProducto ==  codproduc).FirstOrDefault();
+            Productos productos = Datos.Objetos.Where(e => e.CodigoProducto == codprodu).FirstOrDefault();
 
             return View(productos);
         }
