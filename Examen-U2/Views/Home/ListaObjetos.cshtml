@@ -1,0 +1,24 @@
+﻿@model List<Productos>
+
+<h2>Produtos Registrados</h2>
+<table class="tbale table-striped">
+
+
+    <tr>
+        <td>Codido Produto</td>
+        <td>Nombre Prodcuto</td>
+        <td>Productos en Existencia</td>
+        <td>Precio</td>
+    </tr>
+    @foreach (Productos prod in Model)
+            {
+                <tr>
+                    <td>@prod.CodigoProducto</td>
+                    <td>@prod.NombreProducto</td>
+                    <td>@prod.ProductosEnExistencia</td>
+                    <td>@prod.Precio</td>
+                </tr>
+            }
+
+</table>
+<a asp-action="RegistrarProducto">REGISTRAR OTRO PRODUCTO.</a>

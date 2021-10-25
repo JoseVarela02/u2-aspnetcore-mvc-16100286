@@ -35,6 +35,27 @@ namespace Examen_U2.Controllers
             return View();
         }
 
+        public IActionResult ListaObjetos()
+        {
+            return View(Datos.Objetos);
+        }
+
+        [HttpPost]
+
+        public IActionResult RegistrarObjeto(Productos pro)
+
+        {
+            if(ModelState.IsValid)
+            {
+                Datos.AgregarProducto(pro);
+                return View("RegistroExitoso", pro);
+            }
+            else
+            {
+                return View("RegistrarProducto");
+            }
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
